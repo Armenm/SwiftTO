@@ -9,11 +9,23 @@ import MapKit
 import SwiftUI
 
 struct ContentView: View {
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 35.689722, longitude: 139.692222),
-                                                   span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    @State private var disclosureShowing = false
+    
     var body: some View {
-        Map(coordinateRegion: $region)
-        Text("\(region.center.latitude), \(region.center.longitude)")
+        VStack {
+            DisclosureGroup("Show saying", isExpanded: $disclosureShowing) {
+                Text("The rain in spain is on asdfasdf asdf asdf")
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                withAnimation {
+                    disclosureShowing.toggle()
+                }
+            }
+            
+            Spacer()
+        }
+        .padding()
     }
 }
 

@@ -11,7 +11,14 @@ import SwiftUI
 import VisualEffects
 
 struct DiscoverView: View {
+    @State private var disclosureShowing = true
+    @State private var showAdvisory = false
     let location: Location
+    
+    init(location: Location) {
+        self.location = location
+        _showAdvisory = State(wrappedValue: location.advisory != "")
+    }
 
     var body: some View {
         GeometryReader { geo in
@@ -90,6 +97,20 @@ struct DiscoverView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(Color.secondary.opacity(0.5), lineWidth: 2)
                                 )
+                            if location.advisory.isEmpty == false {
+                                DisclosureGroup(isExpanded: $disclosureShowing) {
+                                    Text(location.advisory)
+                                } label: {
+                                    Text("Travel advisory")
+                                        .font(.headline)
+                                }
+                                .padding(.top)
+                                .onTapGesture {
+                                    withAnimation {
+                                        disclosureShowing.toggle()
+                                    }
+                                }
+                            }
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, 20)
