@@ -9,23 +9,22 @@ import MapKit
 import SwiftUI
 
 struct ContentView: View {
-    @State private var disclosureShowing = false
-    
     var body: some View {
-        VStack {
-            DisclosureGroup("Show saying", isExpanded: $disclosureShowing) {
-                Text("The rain in spain is on asdfasdf asdf asdf")
-            }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                withAnimation {
-                    disclosureShowing.toggle()
+        ScrollView {
+            TabView {
+                ForEach(1...8, id: \.self) { i in
+                    GeometryReader { geo in
+                        Image("photo\(i)")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: geo.size.width)
+                    }
                 }
             }
-            
-            Spacer()
+            .frame(height: 300)
+            .tabViewStyle(PageTabViewStyle())
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
-        .padding()
     }
 }
 

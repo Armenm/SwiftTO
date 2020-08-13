@@ -9,10 +9,26 @@ import SwiftUI
 
 struct PicksView: View {
     @EnvironmentObject var locations: Locations
-
+    
     var body: some View {
-        Text("Hello, World!").padding()
-            .navigationTitle("Our Top Picks")
+        ScrollView {
+            TabView {
+                ForEach(1...8, id: \.self) { i in
+                    GeometryReader { geo in
+                        Image("photo\(i)")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: geo.size.width)
+                            .clipped()
+                    }
+                }
+            }
+            .frame(height: 300)
+            .padding(.top, 20)
+            .tabViewStyle(PageTabViewStyle())
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        }
+        .navigationTitle("Our Top Picks")
     }
 }
 
