@@ -12,7 +12,7 @@ struct Place: View {
     
     var body: some View {
         ZStack {
-            Image("\(location.pictures[0])")
+            Image(location.pictures[0])
                 .resizable()
                 .scaledToFill()
                 .clipped()
@@ -32,12 +32,13 @@ struct PlaceVertical: View {
     
     var body: some View {
         VStack {
-            Image("\(location.pictures[0])")
+            Image(location.pictures[0])
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             Text(location.name)
                 .font(.title3)
+                .multilineTextAlignment(.center)
             Text(location.country)
                 .foregroundColor(.secondary)
                 .font(.subheadline)
@@ -52,6 +53,30 @@ struct PlaceVertical: View {
     }
 }
 
+struct HeroView: View {
+    let location: Location
+    
+    var body: some View {
+        GeometryReader { geo in
+            Image(location.heroPicture)
+                .resizable()
+                .scaledToFill()
+                .frame(maxWidth: geo.size.width)
+                .clipped()
+            HStack {
+                Text(location.name)
+                    .font(.system(size: 25, weight: .bold))
+                    .bold()
+                    .foregroundColor(.white)
+                    .shadow(color: Color.black.opacity(0.5), radius: 3)
+                
+                Spacer()
+            }
+            .padding()
+        }
+    }
+}
+
 struct PicksView: View {
     @EnvironmentObject var locations: Locations
     
@@ -63,14 +88,8 @@ struct PicksView: View {
     var body: some View {
         ScrollView {
             TabView {
-                ForEach(1...8, id: \.self) { i in
-                    GeometryReader { geo in
-                        Image("photo\(i)")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(maxWidth: geo.size.width)
-                            .clipped()
-                    }
+                ForEach(locations.places, id: \.id) { location in
+                    HeroView(location: location)
                 }
             }
             .frame(height: 300)
