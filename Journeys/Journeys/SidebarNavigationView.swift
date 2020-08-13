@@ -15,30 +15,22 @@ struct SidebarNavigationView: View {
         NavigationView {
             List(selection: $selection) {
                 NavigationLink(destination: DiscoverView(location: locations.primary)) {
-                    Image(systemName: "airplane.circle.fill")
-                        .imageScale(.large)
-                    Text("Discover")
+                    Label("Discover", systemImage: "airplane.circle.fill")
                 }
                 .tag("Discover")
                 
                 NavigationLink(destination: PicksView()) {
-                    Image(systemName: "star.fill")
-                        .imageScale(.large)
-                    Text("Picks")
+                    Label("Picks", systemImage: "star.fill")
                 }
                 .tag("Picks")
                 
                 NavigationLink(destination: MapView()) {
-                    Image(systemName: "map.fill")
-                        .imageScale(.large)
-                    Text("Maps")
+                    Label("Maps", systemImage: "map.fill")
                 }
                 .tag("Maps")
                 
                 NavigationLink(destination: TipsView()) {
-                    Image(systemName: "list.bullet")
-                        .imageScale(.large)
-                    Text("Tips")
+                    Label("Tips", systemImage: "list.bullet")
                 }
                 .tag("Tips")
             }

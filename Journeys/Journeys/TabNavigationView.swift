@@ -14,36 +14,28 @@ struct TabNavigationView: View {
         TabView {
             DiscoverView(location: locations.primary)
                 .tabItem {
-                    Image(systemName: "airplane.circle.fill")
-                        .imageScale(.large)
-                    Text("Discover")
+                    Label("Discover", systemImage: "airplane.circle.fill")
                 }
             
             NavigationView {
                 PicksView()
             }
             .tabItem {
-                Image(systemName: "star.fill")
-                    .imageScale(.large)
-                Text("Picks")
+                Label("Picks", systemImage: "star.fill")
             }
             
             NavigationView {
                 MapView()
             }
             .tabItem {
-                Image(systemName: "map.fill")
-                    .imageScale(.large)
-                Text("Maps")
+                Label("Maps", systemImage: "map.fill")
             }
             
             NavigationView {
                 TipsView()
             }
             .tabItem {
-                Image(systemName: "list.bullet")
-                    .imageScale(.large)
-                Text("Tips")
+                Label("Tips", systemImage: "list.bullet")
             }
         }
     }
