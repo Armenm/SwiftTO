@@ -87,12 +87,17 @@ struct DiscoverView: View {
 
                             Text(location.more)
                                 .fixedSize(horizontal: false, vertical: true)
+                            
+                            Map(coordinateRegion: $region, interactionModes: [])
+                                .aspectRatio(2, contentMode: .fill)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.secondary.opacity(0.5), lineWidth: 2)
+                                )
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, 20)
-                        
-                        Map(coordinateRegion: $region, interactionModes: [])
-                            .frame(height: 200)
                     }
                     .background(
                         RoundedRectangle(cornerRadius: 20)
