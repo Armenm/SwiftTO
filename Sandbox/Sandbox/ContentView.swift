@@ -9,21 +9,25 @@ import MapKit
 import SwiftUI
 
 struct ContentView: View {
+//    let layout = Array<GridItem>(repeating: GridItem(.flexible()),
+//                                 count: 5)
+    let layout = [
+        GridItem(.adaptive(minimum: 200)),
+        GridItem(.fixed(50)),
+        GridItem(.adaptive(minimum: 200))
+    ]
+    
     var body: some View {
         ScrollView {
-            TabView {
-                ForEach(1...8, id: \.self) { i in
-                    GeometryReader { geo in
-                        Image("photo\(i)")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: geo.size.width)
+            LazyVGrid(columns: layout, spacing: 50, pinnedViews: .sectionHeaders) {
+                Section(header: Text("Meh")) {
+                    ForEach(1..<100) { i in
+                        RoundedRectangle(cornerRadius: 40)
+                            .fill(Color.random())
+                            .frame(height: 200)
                     }
                 }
             }
-            .frame(height: 300)
-            .tabViewStyle(PageTabViewStyle())
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
     }
 }
