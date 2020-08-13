@@ -7,34 +7,115 @@
 
 import SwiftUI
 
-struct Person: Identifiable {
-    let id = UUID()
-    var name: String
-    var children: [Person]?
+struct PrimaryView: View {
+    @State private var selection: Int?
+    
+    var body: some View {
+        List(0..<5, selection: $selection) { i in
+            NavigationLink(destination: SupplementaryView(id: i)) {
+                Text("Row \(i)")
+            }
+        }
+        .navigationTitle("Folders")
+        .listStyle(SidebarListStyle())
+    }
+}
+
+struct SupplementaryView: View {
+    @State private var selection: Int?
+    let id: Int
+    
+    var body: some View {
+        List(0..<100, selection: $selection) { i in
+            NavigationLink(destination: SecondaryView(group: id, id: i)) {
+                Text("Row \(i)")
+            }
+        }
+        .navigationTitle("Notes")
+        .listStyle(InsetGroupedListStyle())
+    }
+}
+
+struct SecondaryView: View {
+    let group: Int
+    let id: Int
+    
+    var body: some View {
+        Text("Destination \(group)-\(id)")
+            .navigationTitle("Notes")
+            .listStyle(InsetGroupedListStyle())
+    }
+}
+
+struct HomeView: View {
+    var body: some View {
+        Text("Home")
+    }
+}
+
+struct StoreView: View {
+    var body: some View {
+        Text("Store")
+    }
+}
+
+struct AccountView: View {
+    var body: some View {
+        Text("Account")
+    }
+}
+
+struct SidebarNavigation: View {
+    var body: some View {
+        NavigationView {
+            List {
+                NavigationLink(destination: HomeView()) {
+                    Text("HomeView")
+                }
+                NavigationLink(destination: StoreView()) {
+                    Text("StoreView")
+                }
+                NavigationLink(destination: AccountView()) {
+                    Text("Account")
+                }
+            }
+            .listStyle(SidebarListStyle())
+        }
+    }
+}
+
+struct TabNavigation: View {
+    var body: some View {
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "cart.fill")
+                    Text("HomeView")
+                }
+            
+            StoreView()
+                .tabItem {
+                    Image(systemName: "cart.fill")
+                    Text("StoreView")
+                }
+            
+            AccountView()
+                .tabItem {
+                    Image(systemName: "cart.fill")
+                    Text("AccountView")
+                }
+        }
+    }
 }
 
 struct ContentView: View {
-    var people: [Person] {
-        let sophie = Person(name: "Sophie")
-        let lottie = Person(name: "Lottie")
-        let john = Person(name: "John")
-        let paul = Person(name: "Paul", children: [sophie, lottie])
-        let andrew = Person(name: "Andrew", children: [john])
-        let terry = Person(name: "Terry", children: [paul, andrew])
-        
-        return [terry]
-    }
+    @Environment(\.horizontalSizeClass) var sizeClass
     
     var body: some View {
-        List(people, children: \.children) { person in
-            if person.children != nil {
-                Image(systemName: "person")
-                Text(person.name)
-                    .font(.headline)
-            } else {
-                Image(systemName: "person.circle")
-                Text(person.name)
-            }
+        if sizeClass == .compact {
+            TabNavigation()
+        } else {
+            SidebarNavigation()
         }
     }
 }
