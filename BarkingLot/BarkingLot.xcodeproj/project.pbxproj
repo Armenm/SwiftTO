@@ -21,7 +21,44 @@
 		51E1BDD524C047E9004C0AB1 /* BarkingLotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E1BDC924C047E9004C0AB1 /* BarkingLotApp.swift */; };
 		51E1BDD624C047E9004C0AB1 /* stores.json in Resources */ = {isa = PBXBuildFile; fileRef = 51E1BDCA24C047E9004C0AB1 /* stores.json */; };
 		51E1BDD724C047E9004C0AB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E1BDCB24C047E9004C0AB1 /* ContentView.swift */; };
+		C0B87CDB24E5C82500677D06 /* BarkingLotClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B87CDA24E5C82500677D06 /* BarkingLotClipApp.swift */; };
+		C0B87CDD24E5C82500677D06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B87CDC24E5C82500677D06 /* ContentView.swift */; };
+		C0B87CDF24E5C82600677D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B87CDE24E5C82600677D06 /* Assets.xcassets */; };
+		C0B87CE224E5C82600677D06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B87CE124E5C82600677D06 /* Preview Assets.xcassets */; };
+		C0B87CE724E5C82600677D06 /* BarkingLotClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = C0B87CD824E5C82500677D06 /* BarkingLotClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0B87CEC24E5C89300677D06 /* SelectStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E1BDC024C047E9004C0AB1 /* SelectStoreView.swift */; };
+		C0B87CED24E5C8A500677D06 /* SelectServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E1BDC724C047E9004C0AB1 /* SelectServiceView.swift */; };
+		C0B87CEE24E5C8A900677D06 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E1BDC624C047E9004C0AB1 /* PurchaseView.swift */; };
+		C0B87CEF24E5C8AB00677D06 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E1BDC124C047E9004C0AB1 /* DataModel.swift */; };
+		C0B87CF024E5C8B500677D06 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E1BDC824C047E9004C0AB1 /* Bundle-Decodable.swift */; };
+		C0B87CF124E5C8C400677D06 /* stores.json in Resources */ = {isa = PBXBuildFile; fileRef = 51E1BDCA24C047E9004C0AB1 /* stores.json */; };
+		C0B87CF224E5C8C700677D06 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 51E1BDC424C047E9004C0AB1 /* services.json */; };
+		C0B87CF524E5D2E800677D06 /* AppClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B87CF424E5D2E800677D06 /* AppClip.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0B87CE524E5C82600677D06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51E1BDA624C047DA004C0AB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0B87CD724E5C82500677D06;
+			remoteInfo = BarkingLotClip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0B87CE824E5C82600677D06 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				C0B87CE724E5C82600677D06 /* BarkingLotClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		51E1BDAE24C047DA004C0AB1 /* BarkingLot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarkingLot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +77,14 @@
 		51E1BDC924C047E9004C0AB1 /* BarkingLotApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarkingLotApp.swift; sourceTree = "<group>"; };
 		51E1BDCA24C047E9004C0AB1 /* stores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stores.json; sourceTree = "<group>"; };
 		51E1BDCB24C047E9004C0AB1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0B87CD824E5C82500677D06 /* BarkingLotClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarkingLotClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0B87CDA24E5C82500677D06 /* BarkingLotClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarkingLotClipApp.swift; sourceTree = "<group>"; };
+		C0B87CDC24E5C82500677D06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0B87CDE24E5C82600677D06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C0B87CE124E5C82600677D06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C0B87CE324E5C82600677D06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0B87CE424E5C82600677D06 /* BarkingLotClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BarkingLotClip.entitlements; sourceTree = "<group>"; };
+		C0B87CF424E5D2E800677D06 /* AppClip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppClip.framework; path = System/Library/Frameworks/AppClip.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +95,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0B87CD524E5C82500677D06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0B87CF524E5D2E800677D06 /* AppClip.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,7 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				51E1BDB024C047DA004C0AB1 /* BarkingLot */,
+				C0B87CD924E5C82500677D06 /* BarkingLotClip */,
 				51E1BDAF24C047DA004C0AB1 /* Products */,
+				C0B87CF324E5D2E800677D06 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				51E1BDAE24C047DA004C0AB1 /* BarkingLot.app */,
+				C0B87CD824E5C82500677D06 /* BarkingLotClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +155,35 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C0B87CD924E5C82500677D06 /* BarkingLotClip */ = {
+			isa = PBXGroup;
+			children = (
+				C0B87CDA24E5C82500677D06 /* BarkingLotClipApp.swift */,
+				C0B87CDC24E5C82500677D06 /* ContentView.swift */,
+				C0B87CDE24E5C82600677D06 /* Assets.xcassets */,
+				C0B87CE324E5C82600677D06 /* Info.plist */,
+				C0B87CE424E5C82600677D06 /* BarkingLotClip.entitlements */,
+				C0B87CE024E5C82600677D06 /* Preview Content */,
+			);
+			path = BarkingLotClip;
+			sourceTree = "<group>";
+		};
+		C0B87CE024E5C82600677D06 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C0B87CE124E5C82600677D06 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C0B87CF324E5D2E800677D06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0B87CF424E5D2E800677D06 /* AppClip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,15 +194,34 @@
 				51E1BDAA24C047DA004C0AB1 /* Sources */,
 				51E1BDAB24C047DA004C0AB1 /* Frameworks */,
 				51E1BDAC24C047DA004C0AB1 /* Resources */,
+				C0B87CE824E5C82600677D06 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C0B87CE624E5C82600677D06 /* PBXTargetDependency */,
 			);
 			name = BarkingLot;
 			productName = BarkingLot;
 			productReference = 51E1BDAE24C047DA004C0AB1 /* BarkingLot.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C0B87CD724E5C82500677D06 /* BarkingLotClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0B87CEB24E5C82600677D06 /* Build configuration list for PBXNativeTarget "BarkingLotClip" */;
+			buildPhases = (
+				C0B87CD424E5C82500677D06 /* Sources */,
+				C0B87CD524E5C82500677D06 /* Frameworks */,
+				C0B87CD624E5C82500677D06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarkingLotClip;
+			productName = BarkingLotClip;
+			productReference = C0B87CD824E5C82500677D06 /* BarkingLotClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
 /* End PBXNativeTarget section */
 
@@ -131,6 +235,9 @@
 					51E1BDAD24C047DA004C0AB1 = {
 						CreatedOnToolsVersion = 12.0;
 						LastSwiftMigration = 1200;
+					};
+					C0B87CD724E5C82500677D06 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -148,6 +255,7 @@
 			projectRoot = "";
 			targets = (
 				51E1BDAD24C047DA004C0AB1 /* BarkingLot */,
+				C0B87CD724E5C82500677D06 /* BarkingLotClip */,
 			);
 		};
 /* End PBXProject section */
@@ -162,6 +270,17 @@
 				51E1BDD624C047E9004C0AB1 /* stores.json in Resources */,
 				51E1BDB624C047DB004C0AB1 /* Assets.xcassets in Resources */,
 				51E1BDCE24C047E9004C0AB1 /* tips.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0B87CD624E5C82500677D06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0B87CF124E5C8C400677D06 /* stores.json in Resources */,
+				C0B87CF224E5C8C700677D06 /* services.json in Resources */,
+				C0B87CE224E5C82600677D06 /* Preview Assets.xcassets in Resources */,
+				C0B87CDF24E5C82600677D06 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +303,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0B87CD424E5C82500677D06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0B87CDD24E5C82500677D06 /* ContentView.swift in Sources */,
+				C0B87CEC24E5C89300677D06 /* SelectStoreView.swift in Sources */,
+				C0B87CED24E5C8A500677D06 /* SelectServiceView.swift in Sources */,
+				C0B87CEE24E5C8A900677D06 /* PurchaseView.swift in Sources */,
+				C0B87CDB24E5C82500677D06 /* BarkingLotClipApp.swift in Sources */,
+				C0B87CF024E5C8B500677D06 /* Bundle-Decodable.swift in Sources */,
+				C0B87CEF24E5C8AB00677D06 /* DataModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0B87CE624E5C82600677D06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0B87CD724E5C82500677D06 /* BarkingLotClip */;
+			targetProxy = C0B87CE524E5C82600677D06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		51E1BDBB24C047DB004C0AB1 /* Debug */ = {
@@ -306,6 +447,7 @@
 		51E1BDBE24C047DB004C0AB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -330,6 +472,7 @@
 		51E1BDBF24C047DB004C0AB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -345,6 +488,54 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.BarkingLot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C0B87CE924E5C82600677D06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BarkingLotClip/BarkingLotClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"BarkingLotClip/Preview Content\"";
+				DEVELOPMENT_TEAM = G2U7S552VM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BarkingLotClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.BarkingLot.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPCLIP";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0B87CEA24E5C82600677D06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BarkingLotClip/BarkingLotClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"BarkingLotClip/Preview Content\"";
+				DEVELOPMENT_TEAM = G2U7S552VM;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BarkingLotClip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.BarkingLot.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPCLIP;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,6 +558,15 @@
 			buildConfigurations = (
 				51E1BDBE24C047DB004C0AB1 /* Debug */,
 				51E1BDBF24C047DB004C0AB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0B87CEB24E5C82600677D06 /* Build configuration list for PBXNativeTarget "BarkingLotClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0B87CE924E5C82600677D06 /* Debug */,
+				C0B87CEA24E5C82600677D06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
