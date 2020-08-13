@@ -32,7 +32,7 @@ struct PlaceVertical: View {
     
     var body: some View {
         VStack {
-            Image("\(location.country)")
+            Image("\(location.pictures[0])")
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 10))

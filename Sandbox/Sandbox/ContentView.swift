@@ -8,25 +8,26 @@
 import MapKit
 import SwiftUI
 
+struct City: Identifiable {
+    var id: String { name }
+    let name: String
+    let location: CLLocationCoordinate2D
+    
+    static let london = City(name: "London", location: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275))
+    static let paris = City(name: "Paris", location: CLLocationCoordinate2D(latitude: 48.864716, longitude: 2.349014))
+}
+
 struct ContentView: View {
-//    let layout = Array<GridItem>(repeating: GridItem(.flexible()),
-//                                 count: 5)
-    let layout = [
-        GridItem(.adaptive(minimum: 200)),
-        GridItem(.fixed(50)),
-        GridItem(.adaptive(minimum: 200))
-    ]
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    let annotations = [City.london, City.paris]
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: layout, spacing: 50, pinnedViews: .sectionHeaders) {
-                Section(header: Text("Meh")) {
-                    ForEach(1..<100) { i in
-                        RoundedRectangle(cornerRadius: 40)
-                            .fill(Color.random())
-                            .frame(height: 200)
-                    }
-                }
+        Map(coordinateRegion: $region, annotationItems: annotations) {
+            annotation in
+            MapAnnotation(coordinate: annotation.location, anchorPoint: CGPoint(x: 0.5, y: 1)) {
+                Image(systemName: "mappin")
+                    .imageScale(.large)
+                    .foregroundColor(.red)
             }
         }
     }

@@ -12,7 +12,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var locations: Locations
-
+    
     var body: some View {
         TabView {
             DiscoverView(location: locations.primary)
@@ -30,7 +30,16 @@ struct ContentView: View {
                     .imageScale(.large)
                 Text("Picks")
             }
-
+            
+            NavigationView {
+                MapView()
+            }
+            .tabItem {
+                Image(systemName: "map.fill")
+                    .imageScale(.large)
+                Text("Maps")
+            }
+            
             NavigationView {
                 TipsView()
             }
