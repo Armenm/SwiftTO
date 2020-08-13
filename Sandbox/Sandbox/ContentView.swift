@@ -8,23 +8,61 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var names = ["Chidi", "Eleanor", "Jason", "Tahani"]
+    @State private var isVertical = false
+    
+    @Namespace var animation
+    
     var body: some View {
-        List(0..<100) { _ in
-        Label {
-            Text("Home")
-                .foregroundColor(.red)
-                .padding()
-        } icon: {
-            Image(systemName: "house.fill")
-                .padding()
-                .overlay(
-                    Rectangle()
-                        .stroke(Color.red, lineWidth: 4)
-                )
-                .padding()
+        if isVertical {
+            VStack(spacing: 20) {
+                ForEach(names, id: \.self) { name in
+                    Text(name)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .matchedGeometryEffect(id: name, in: animation)
+                }
+            }
+            .transition(.none)
+            .onTapGesture {
+                withAnimation {
+                    names.shuffle()
+                    isVertical.toggle()
+                }
+            }
+        } else {
+            HStack(spacing: 20) {
+                ForEach(names, id: \.self) { name in
+                    Text(name)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .matchedGeometryEffect(id: name, in: animation)
+                }
+            }
+            .transition(.none)
+            .onTapGesture {
+                withAnimation {
+                    names.shuffle()
+                    isVertical.toggle()
+                }
+            }
         }
-        .font(.largeTitle)
+    }
+}
+
+extension AnyTransition {
+    struct NoneModifier: ViewModifier {
+        func body(content: Content) -> some View {
+            content
         }
+    }
+    
+    static var none: AnyTransition {
+        AnyTransition.modifier(active: NoneModifier(), identity: NoneModifier())
     }
 }
 
